@@ -81,6 +81,31 @@ class AlamofireXmlToObjectsTests: XCTestCase {
 
 ```
 
+The code above will parse the folowing XML into the objects:
+
+```
+<wheather>
+   <location>Toronto, Canada</location>
+   <three_day_forecast>
+      <forecast>
+         <conditions>Partly cloudy</conditions>
+         <day>Monday</day>
+         <temperature>20</temperature>
+      </forecast>
+      <forecast>
+         <conditions>Showers</conditions>
+         <day>Tuesday</day>
+         <temperature>22</temperature>
+      </forecast>
+      <forecast>
+         <conditions>Sunny</conditions>
+         <day>Wednesday</day>
+         <temperature>28</temperature>
+      </forecast>
+   </three_day_forecast>
+</wheather>
+```
+
 ## License
 
 AlamofireXmlToObjects is available under the MIT 3 license. See the LICENSE file for more info.
