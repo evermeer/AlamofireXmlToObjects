@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29F90579498D5A84D40D6CBE /* Pods_AlamofireXmlToObjectsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796DD25E1793E802ECBE8657 /* Pods_AlamofireXmlToObjectsTests.framework */; };
-		44594F343DA75F9517071113 /* Pods_AlamofireXmlToObjectsTestsOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A235AAD394CDEE33FA2A6746 /* Pods_AlamofireXmlToObjectsTestsOSX.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		44594F343DA75F9517071113 /* Pods_AlamofireXmlToObjectsTestsOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A235AAD394CDEE33FA2A6746 /* Pods_AlamofireXmlToObjectsTestsOSX.framework */; };
 		7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */; };
 		7FC3AEB81BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */; };
 		7FC3AEC31BC964BF00221BFB /* AlamofireXmlToObjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEBB1BC964BF00221BFB /* AlamofireXmlToObjectsTests.swift */; };
@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		44053659CBEA703FF31F494B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8C1FFB3E3B1327969523F1 /* Pods-AlamofireXmlToObjectsTestsOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireXmlToObjectsTestsOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireXmlToObjectsTestsOSX/Pods-AlamofireXmlToObjectsTestsOSX.release.xcconfig"; sourceTree = "<group>"; };
 		796DD25E1793E802ECBE8657 /* Pods_AlamofireXmlToObjectsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireXmlToObjectsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0859E71B4008B0009F0B0D /* AlamofireXmlToObjects.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlamofireXmlToObjects.podspec; sourceTree = "<group>"; };
 		7F193D141B36E629000C1C34 /* AlamofireXmlToObjectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireXmlToObjectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +41,7 @@
 		A235AAD394CDEE33FA2A6746 /* Pods_AlamofireXmlToObjectsTestsOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireXmlToObjectsTestsOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B0DFA43FC28406B4846F7F /* Pods-AlamofireXmlToObjectsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireXmlToObjectsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireXmlToObjectsTests/Pods-AlamofireXmlToObjectsTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB15283F96EFEB7070D78082 /* Pods-AlamofireXmlToObjectsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireXmlToObjectsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireXmlToObjectsTests/Pods-AlamofireXmlToObjectsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA8519FABB7254CB7A2B74DD /* Pods-AlamofireXmlToObjectsTestsOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireXmlToObjectsTestsOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireXmlToObjectsTestsOSX/Pods-AlamofireXmlToObjectsTestsOSX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,8 @@
 			children = (
 				BB15283F96EFEB7070D78082 /* Pods-AlamofireXmlToObjectsTests.debug.xcconfig */,
 				B8B0DFA43FC28406B4846F7F /* Pods-AlamofireXmlToObjectsTests.release.xcconfig */,
+				CA8519FABB7254CB7A2B74DD /* Pods-AlamofireXmlToObjectsTestsOSX.debug.xcconfig */,
+				6E8C1FFB3E3B1327969523F1 /* Pods-AlamofireXmlToObjectsTestsOSX.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -465,6 +469,7 @@
 		};
 		7F2976651BB963100074C85A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8519FABB7254CB7A2B74DD /* Pods-AlamofireXmlToObjectsTestsOSX.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -480,6 +485,7 @@
 		};
 		7F2976661BB963100074C85A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8C1FFB3E3B1327969523F1 /* Pods-AlamofireXmlToObjectsTestsOSX.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "AlamofireXmlToObjectsTests/osx-Info.plist";

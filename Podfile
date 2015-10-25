@@ -8,9 +8,9 @@ target 'AlamofireXmlToObjectsTests' do
     pod 'Alamofire'
 end
 
-#target 'AlamofireXmlToObjectsTestsOSX' do
-#    platform :osx, '10.10'
-#    pod 'EVReflection'
-#    pod 'XMLDictionary'
-#    pod 'Alamofire'
-#end
+target 'AlamofireXmlToObjectsTestsOSX' do
+    platform :osx, '10.10'
+    pod 'EVReflection'
+    pod 'XMLDictionary'
+    pod 'Alamofire'
+end
