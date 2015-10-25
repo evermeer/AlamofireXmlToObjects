@@ -53,26 +53,7 @@ extension Request {
                 dispatch_async(queue ?? dispatch_get_main_queue()) {
                     switch response.result {
                     case .Success(let xml):
-                        let x:String = "<wheather><location>Toronto, Canada</location>" +
-                            "<three_day_forecast>" +
-                            "<forecast>" +
-                            "<conditions>Partly cloudy</conditions>" +
-                            "<day>Monday</day>" +
-                            "<temperature>20</temperature>" +
-                            "</forecast>" +
-                            "<forecast>" +
-                            "<conditions>Showers</conditions>" +
-                            "<day>Tuesday</day>" +
-                            "<temperature>22</temperature>" +
-                            "</forecast>" +
-                            "<forecast>" +
-                            "<conditions>Sunny</conditions>" +
-                            "<day>Wednesday</day>" +
-                            "<temperature>28</temperature>" +
-                            "</forecast>" +
-                        "</three_day_forecast></wheather>"
-                        //data.value
-                        let result = NSDictionary(XMLString: x)
+                        let result = NSDictionary(XMLString: xml)
                         completionHandler(self.request, self.response, Result.Success(T(dictionary: result)))
                     case .Failure(let error):
                         completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
