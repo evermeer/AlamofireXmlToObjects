@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.1.0)
+  - EVReflection (2.11.0)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - EVReflection
+  - XMLDictionary
+
+SPEC CHECKSUMS:
+  Alamofire: 415bd7f56197722978759078486689f7ef913dce
+  EVReflection: 353979472e98a0c5832630b44e60ecdbe4134f81
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
+
+COCOAPODS: 0.39.0
