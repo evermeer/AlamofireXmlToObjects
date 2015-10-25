@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
 
 s.name         = "AlamofireXmlToObjects"
 s.version      = "1.0.0"
-s.summary      = "An Alamofire extension which converts XML response data into swift objects using EVReflection and XMLParser"
-s.description  = "An Alamofire extension which converts XML response data into swift objects using EVReflection and XMLParser. "
+s.summary      = "An Alamofire extension which converts XML response data into swift objects using EVReflection and XMLDictionary"
+s.description  = "An Alamofire extension which converts XML response data into swift objects using EVReflection and XMLDictionary. "
 s.homepage     = "https://github.com/evermeer/AlamofireXmlToObjects"
 
 
@@ -87,7 +87,7 @@ s.frameworks = "Foundation"
 s.requires_arc = true
 
 s.dependency "Alamofire"
-s.dependency "XMLParser"
+s.dependency "XMLDictionary"
 s.dependency "EVReflection"
 
 end
