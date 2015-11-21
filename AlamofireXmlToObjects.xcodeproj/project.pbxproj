@@ -23,7 +23,6 @@
 		796DD25E1793E802ECBE8657 /* Pods_AlamofireXmlToObjectsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireXmlToObjectsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0859E71B4008B0009F0B0D /* AlamofireXmlToObjects.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AlamofireXmlToObjects.podspec; sourceTree = "<group>"; };
 		7F193D141B36E629000C1C34 /* AlamofireXmlToObjectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireXmlToObjectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F193D261B371199000C1C34 /* circle.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.yml; sourceTree = "<group>"; };
 		7F193D271B371199000C1C34 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7F193D281B371199000C1C34 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7F193D291B371199000C1C34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -69,7 +68,6 @@
 			children = (
 				7F4A36F71BDCD67100A0F73F /* .gitignore */,
 				7F4A36F81BDCD67100A0F73F /* .travis.yml */,
-				7F193D261B371199000C1C34 /* circle.yml */,
 				7F193D271B371199000C1C34 /* LICENSE */,
 				7F193D281B371199000C1C34 /* Podfile */,
 				7F193D291B371199000C1C34 /* README.md */,
