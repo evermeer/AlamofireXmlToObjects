@@ -49,7 +49,7 @@ Version 0.36 of cocoapods will make a dynamic framework of all the pods that you
 import AlamofireXmlToObjects
 ```
 
-If you want support for older versions than iOS 8.0, then you can also just copy the AlamofireXmlToObjects.swift  to your. (Also see the instructions for embedding the EVReflection and Alamofire libraries) 
+If you want support for older versions than iOS 8.0, then you can also just copy the AlamofireXmlToObjects.swift  to your project. (Also see the instructions for embedding the EVReflection, XMLDictionary and Alamofire libraries) 
 
 
 ## Sample code
