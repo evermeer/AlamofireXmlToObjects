@@ -24,7 +24,7 @@ With AlamofireXmlToObjects it's extremely easy to fetch a XML feed and parse it 
 
 AlamofireXmlToObjects is based on the folowing libraries:
 - [Alamofire](https://github.com/Alamofire/Alamofire) is an elegant HTTP Networking library in Swift
-- [MLDictionary](https://github.com/nicklockwood/XMLDictionary) Is a simple way to parse and generate XML. Converts an XML file to an NSDictionary
+- [XMLDictionary](https://github.com/nicklockwood/XMLDictionary) Is a simple way to parse and generate XML. Converts an XML file to an NSDictionary
 - [EVReflection](https://github.com/evermeer/EVReflection) is used to parse the XML result to your objects
 
 If you have a JSON service and want the same functionality then have a look at [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects).
@@ -66,17 +66,13 @@ class Forecast: EVObject {
     var conditions: String?
 }
 
-class AlamofireXmlToObjectsTests: XCTestCase {
+class AlamofireXmlToObjectsTests {
     func testResponseObject() {
         let URL = "https://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample_xml"
         Alamofire.request(.GET, URL, parameters: nil)
         .responseObject { (response: WeatherResponse?, error: NSError?) in
             // That was all... You now have a WeatherResponse object with data
         }
-
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
-            XCTAssertNil(error, "\(error)")
-        })
     }
 }
 
