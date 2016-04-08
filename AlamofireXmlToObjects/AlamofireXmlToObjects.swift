@@ -54,7 +54,9 @@ extension Request {
                     switch response.result {
                     case .Success(let xml):
                         let result = NSDictionary(XMLString: xml)
-                        completionHandler(self.request, self.response, Result.Success(T(dictionary: result)))
+                        let t = T()
+                        EVReflection.setPropertiesfromDictionary(result, anyObject: t)
+                        completionHandler(self.request, self.response, Result.Success(t))
                     case .Failure(let error):
                         completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
                     }
