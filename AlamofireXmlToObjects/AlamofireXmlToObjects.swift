@@ -53,10 +53,13 @@ extension Request {
                 dispatch_async(queue ?? dispatch_get_main_queue()) {
                     switch response.result {
                     case .Success(let xml):
-                        let result = NSDictionary(XMLString: xml)
                         let t = T()
-                        EVReflection.setPropertiesfromDictionary(result, anyObject: t)
-                        completionHandler(self.request, self.response, Result.Success(t))
+                        if let result = NSDictionary(XMLString: xml) {
+                            EVReflection.setPropertiesfromDictionary(result, anyObject: t)
+                            completionHandler(self.request, self.response, Result.Success(t))
+                        } else {
+                            completionHandler(self.request, self.response, Result.Failure(NSError(domain: "NaN", code: 1, userInfo: nil)))
+                        }
                     case .Failure(let error):
                         completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
                     }

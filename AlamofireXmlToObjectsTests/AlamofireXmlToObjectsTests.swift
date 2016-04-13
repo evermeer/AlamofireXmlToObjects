@@ -57,7 +57,7 @@ class AlamofireXmlToObjectsTests: XCTestCase {
                     }
                     
                 } else {
-                    XCTAssert(true, "no result from service")
+                    XCTAssert(false, "no result from service")
                 }
                 
                     
@@ -89,7 +89,7 @@ class AlamofireXmlToObjectsTests: XCTestCase {
                             XCTAssertNotNil(forecast.temperature, "temperature should not be nil")
                         }
                     } else {
-                        XCTAssert(true, "Could not get result from service")
+                        XCTAssert(false, "Could not get result from service")
                     }
             }
             
