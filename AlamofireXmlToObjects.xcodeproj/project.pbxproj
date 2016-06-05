@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F41B6341D041A68009D083B /* sample3_xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F41B6331D041A68009D083B /* sample3_xml */; };
+		7F41B6361D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41B6351D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift */; };
 		7F64D0FD1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */; };
 		7F64D0FE1CBD7F8A00AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */; };
 		7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */; };
@@ -30,6 +32,8 @@
 		7F193D281B371199000C1C34 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7F193D291B371199000C1C34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F2976601BB963100074C85A /* AlamofireXmlToObjectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireXmlToObjectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F41B6331D041A68009D083B /* sample3_xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample3_xml; sourceTree = "<group>"; };
+		7F41B6351D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireXmlToObjects3Tests.swift; sourceTree = "<group>"; };
 		7F4A36F71BDCD67100A0F73F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7F4A36F81BDCD67100A0F73F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		7F5B07B21BC997920077F674 /* AlamofireXmlToObjectsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlamofireXmlToObjectsTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -104,8 +108,10 @@
 			children = (
 				7FC3AEBB1BC964BF00221BFB /* AlamofireXmlToObjectsTests.swift */,
 				7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */,
+				7F41B6351D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift */,
 				7FC3AEBF1BC964BF00221BFB /* sample_xml */,
 				7F64D0FB1CBD7B5800AAB0B2 /* sampl2_xml */,
+				7F41B6331D041A68009D083B /* sample3_xml */,
 				7FC3AED11BC97FB400221BFB /* Supporting Files */,
 			);
 			path = AlamofireXmlToObjectsTests;
@@ -228,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC3AECB1BC964BF00221BFB /* sample_xml in Resources */,
+				7F41B6341D041A68009D083B /* sample3_xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F41B6361D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift in Sources */,
 				7F64D0FD1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */,
 				7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */,
 				7FC3AEC31BC964BF00221BFB /* AlamofireXmlToObjectsTests.swift in Sources */,
