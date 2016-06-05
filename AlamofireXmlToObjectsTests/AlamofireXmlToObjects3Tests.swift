@@ -11,12 +11,33 @@ import Alamofire
 import XMLDictionary
 import EVReflection
 
-
 class AllGames: EVObject {
     var __name: String?
+    var StateProv: StateProvObject?
 }
 
+class StateProvObject: EVObject {
+    var __name: String?
+    var _stateprov_name: String?
+    var _stateprov_id: String?
+    var game: [Game] = []
+}
 
+class Game: EVObject {
+    var __name: String?
+    var _game_id: Int = 0
+    var _game_name: String?
+    var _update_time: NSDate?
+    var lastdraw_date: String?
+    var lastdraw_numbers: String?
+    var nextdraw_date: String?
+    var jackpot: Jackpot?
+}
+
+class Jackpot: EVObject {
+    var __text: String?
+    var _date: String?
+}
 
 class AlamofireXmlToObjects3Tests: XCTestCase {
 
@@ -37,22 +58,26 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
         let URL: URLStringConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample3_xml"
         let expectation = expectationWithDescription("\(URL)")
 
+        Request.outputDictionary = true
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        dateFormatter.dateFormat = "ddd yyyy'-'MM'-'dd' 'HH':'mm':'ss Z"
+        EVReflection.setDateFormatter(dateFormatter)
+
         Alamofire.request(.GET, URL)
             .responseObject { (response: Result<AllGames, NSError>) in
-
                 expectation.fulfill()
                 if let error = response.error {
                     XCTAssert(false, "ERROR: \(error.description)")
                 } else {
                     if let result = response.value {
                         print("\(result.description)")
-
                     } else {
                         XCTAssert(false, "no result from service")
                     }
                 }
-
-
         }
 
         waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in

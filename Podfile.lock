@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.4.0)
-  - EVReflection (2.31.0)
+  - EVReflection (2.34.0)
   - XMLDictionary (1.4)
 
 DEPENDENCIES:
@@ -10,9 +10,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  EVReflection: 94295813d37aa31feb6f9941476a3874b445b19e
+  EVReflection: 20e23d83fe7e0b3cd79410562c04969b3861a104
   XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
 PODFILE CHECKSUM: 252ce6299ebc88fc63aa2f98748cf9d35ff9987b
 
-COCOAPODS: 1.0.0.beta.8
+COCOAPODS: 1.0.0
