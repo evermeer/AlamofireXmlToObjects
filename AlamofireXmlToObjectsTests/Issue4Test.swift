@@ -18,8 +18,9 @@ class XmlResponse: EVObject {
 }
 
 class QList: EVObject {
-    var iname: String?
+    var piname: String?
     var picell: String?
+    var rinum: String?
 }
 
 
