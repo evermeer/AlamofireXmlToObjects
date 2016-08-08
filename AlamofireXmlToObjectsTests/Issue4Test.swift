@@ -14,7 +14,7 @@ import EVReflection
 
 
 class XmlResponse: EVObject {
-    var qlist: QList?
+    var qlist: [QList]?
 }
 
 class QList: EVObject {
