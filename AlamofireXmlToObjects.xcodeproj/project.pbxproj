@@ -11,6 +11,8 @@
 		7F41B6361D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41B6351D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift */; };
 		7F64D0FD1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */; };
 		7F64D0FE1CBD7F8A00AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */; };
+		7F7ED5151D8134BE00DB0BC2 /* Issue6Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7ED5141D8134BE00DB0BC2 /* Issue6Test.swift */; };
+		7F7ED5171D81355400DB0BC2 /* Issue6_xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F7ED5161D81355400DB0BC2 /* Issue6_xml */; };
 		7FB7B6A51D53694000DBCAB8 /* Issue4_xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FB7B6A41D53694000DBCAB8 /* Issue4_xml */; };
 		7FB7B6A71D53696000DBCAB8 /* Issue4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7B6A61D53696000DBCAB8 /* Issue4Test.swift */; };
 		7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */; };
@@ -41,6 +43,8 @@
 		7F5B07B21BC997920077F674 /* AlamofireXmlToObjectsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlamofireXmlToObjectsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F64D0FB1CBD7B5800AAB0B2 /* sampl2_xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sampl2_xml; sourceTree = "<group>"; };
 		7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireXmlToObjects2Tests.swift; sourceTree = "<group>"; };
+		7F7ED5141D8134BE00DB0BC2 /* Issue6Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue6Test.swift; sourceTree = "<group>"; };
+		7F7ED5161D81355400DB0BC2 /* Issue6_xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Issue6_xml; sourceTree = "<group>"; };
 		7FB7B6A41D53694000DBCAB8 /* Issue4_xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Issue4_xml; sourceTree = "<group>"; };
 		7FB7B6A61D53696000DBCAB8 /* Issue4Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue4Test.swift; sourceTree = "<group>"; };
 		7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireXmlToObjects.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			children = (
 				7FB7B6A41D53694000DBCAB8 /* Issue4_xml */,
 				7FB7B6A61D53696000DBCAB8 /* Issue4Test.swift */,
+				7F7ED5161D81355400DB0BC2 /* Issue6_xml */,
+				7F7ED5141D8134BE00DB0BC2 /* Issue6Test.swift */,
 			);
 			name = GitIssues;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FB7B6A51D53694000DBCAB8 /* Issue4_xml in Resources */,
+				7F7ED5171D81355400DB0BC2 /* Issue6_xml in Resources */,
 				7FC3AECB1BC964BF00221BFB /* sample_xml in Resources */,
 				7F41B6341D041A68009D083B /* sample3_xml in Resources */,
 			);
@@ -363,6 +370,7 @@
 			files = (
 				7FB7B6A71D53696000DBCAB8 /* Issue4Test.swift in Sources */,
 				7F41B6361D041BCA009D083B /* AlamofireXmlToObjects3Tests.swift in Sources */,
+				7F7ED5151D8134BE00DB0BC2 /* Issue6Test.swift in Sources */,
 				7F64D0FD1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */,
 				7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */,
 				7FC3AEC31BC964BF00221BFB /* AlamofireXmlToObjectsTests.swift in Sources */,
