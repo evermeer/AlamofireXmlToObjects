@@ -35,7 +35,7 @@ class Issue6Test: XCTestCase {
         let expectation = expectationWithDescription("\(URL)")
 
         Alamofire.request(.GET, URL)
-            .responseObject { (response: Result<HMChannel, NSError>) in
+            .responseObject { (response: Result<XMLResult, NSError>) in
                 if let error = response.error {
                     XCTAssert(false, "ERROR: \(error.description)")
                 } else {
@@ -55,6 +55,16 @@ class Issue6Test: XCTestCase {
     }
 }
 
+
+class XMLResult: EVObject {
+    var name: String?
+    var channel: [HMChannel]?
+    var datapoint: [HMDatapoint]?
+
+    override internal func propertyMapping() -> [(String?, String?)] {
+        return [("name", "__name")]
+    }
+}
 
 class HMChannel: EVObject {
     var datapoint: [HMDatapoint] = [HMDatapoint]()
@@ -80,15 +90,16 @@ class HMChannel: EVObject {
 }
 
 class HMDatapoint: EVObject {
-    var name: String = ""
-    var type: String = ""
+    var name: String?
+    var type: String?
     var ise_id: Int = 0
-    var value: String = ""
-    var valuetype: String = ""
-    var valueunit: String = ""
+    var value: String?
+    var valuetype: String?
+    var valueunit: String?
     var timestamp: Int = 0
+    var operations: String?
 
     override internal func propertyMapping() -> [(String?, String?)] {
-        return [("name", "_name"), ("ise_id", "_ise_id"), ("type", "_type"), ("value", "_value"), ("valuetype", "_valuetype"), ("valueunit","_valueunit"), ("timestamp","_timestamp")]
+        return [("name", "_name"), ("ise_id", "_ise_id"), ("type", "_type"), ("value", "_value"), ("valuetype", "_valuetype"), ("valueunit","_valueunit"), ("timestamp","_timestamp"), ("operations","_operations")]
     }
 }
