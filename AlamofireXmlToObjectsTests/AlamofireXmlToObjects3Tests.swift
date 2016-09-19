@@ -27,7 +27,7 @@ class Game: EVObject {
     var __name: String?
     var _game_id: Int = 0
     var _game_name: String?
-    var _update_time: NSDate?
+    var _update_time: Date?
     var lastdraw_date: String?
     var lastdraw_numbers: String?
     var nextdraw_date: String?
@@ -44,7 +44,7 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        EVReflection.setBundleIdentifier(AllGames)
+        EVReflection.setBundleIdentifier(AllGames.self)
     }
 
     override func tearDown() {
@@ -55,22 +55,22 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
 
     func testResponseObject() {
         // This is an example of a functional test case.
-        let URL: URLStringConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample3_xml"
-        let expectation = expectationWithDescription("\(URL)")
+        let URL: URLConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample3_xml"
+        let expectation = self.expectation(description: "\(URL)")
 
-        Request.outputDictionary = true
+        DataRequest.outputDictionary = true
 
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dateFormatter.dateFormat = "ddd yyyy'-'MM'-'dd' 'HH':'mm':'ss Z"
         EVReflection.setDateFormatter(dateFormatter)
 
-        Alamofire.request(.GET, URL)
-            .responseObject { (response: Result<AllGames, NSError>) in
+        Alamofire.request(URL)
+            .responseObject { (response: Result<AllGames>) in
                 expectation.fulfill()
                 if let error = response.error {
-                    XCTAssert(false, "ERROR: \(error.description)")
+                    XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
                     if let result = response.value {
                         print("\(result.description)")
@@ -80,9 +80,9 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
                 }
         }
 
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { error in
             XCTAssertNil(error, "\(error)")
-        })
+        }
     }
 
 }

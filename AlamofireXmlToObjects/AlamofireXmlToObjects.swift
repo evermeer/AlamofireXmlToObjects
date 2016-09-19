@@ -11,7 +11,7 @@ import EVReflection
 import XMLDictionary
 import Alamofire
 
-extension Request {
+extension DataRequest {
     static var outputDictionary: Bool = false
 
     /**
@@ -21,7 +21,7 @@ extension Request {
 
     - returns: The request.
     */
-    public func responseObject<T: EVObject>(completionHandler: (Result<T, NSError>) -> Void) -> Self {
+    public func responseObject<T: EVObject>(_ completionHandler: @escaping (Result<T>) -> Void) -> Self {
         return responseObject(nil) { (request, response, data) in
             completionHandler(data)
         }
@@ -34,7 +34,7 @@ extension Request {
 
     - returns: The request.
     */
-    public func responseObject<T: EVObject>(completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<T, NSError>) -> Void) -> Self {
+    public func responseObject<T: EVObject>(_ completionHandler: @escaping (URLRequest?, HTTPURLResponse?, Result<T>) -> Void) -> Self {
         return responseObject(nil) { (request, response, data) in
             completionHandler(request, response, data)
         }
@@ -48,27 +48,29 @@ extension Request {
 
     - returns: The request.
     */
-    public func responseObject<T: EVObject>(queue: dispatch_queue_t?, completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<T, NSError>) -> Void) -> Self {
-        return responseString(completionHandler: { (response) -> Void in
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                dispatch_async(queue ?? dispatch_get_main_queue()) {
+    public func responseObject<T:EVObject>(_ queue: DispatchQueue? = nil, encoding: String.Encoding? = nil, completionHandler: @escaping (URLRequest?, HTTPURLResponse?, Result<T>) -> Void) -> Self {
+        return responseString(encoding: encoding, completionHandler: { (response) -> Void in
+            DispatchQueue.global().async {
+                (queue ?? DispatchQueue.main).async {
                     switch response.result {
-                    case .Success(let xml):
+                    case .success(let xml):
                         let t = T()
-                        if let result = NSDictionary(XMLString: xml) {
-                            if Request.outputDictionary {
+                        if let result = NSDictionary(xmlString: xml) {
+                            if DataRequest.outputDictionary {
                                 print("Dictionary from XML = \(result)")
                             }
-                            EVReflection.setPropertiesfromDictionary(result, anyObject: t)
-                            completionHandler(self.request, self.response, Result.Success(t))
+                            let _ = EVReflection.setPropertiesfromDictionary(result, anyObject: t)
+                            completionHandler(self.request, self.response, Result.success(t))
                         } else {
-                            completionHandler(self.request, self.response, Result.Failure(NSError(domain: "NaN", code: 1, userInfo: nil)))
+                            completionHandler(self.request, self.response, Result.failure(NSError(domain: "NaN", code: 1, userInfo: nil)))
                         }
-                    case .Failure(let error):
-                        completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
+                    case .failure(let error):
+                        completionHandler(self.request, self.response, Result.failure(error))
                     }
                 }
+                
             }
         })
     }
 }
+
