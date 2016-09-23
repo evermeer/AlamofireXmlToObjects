@@ -45,7 +45,15 @@ extension DataRequest {
                 if DataRequest.outputXMLresult {
                     print("Dictionary from XML = \(result)")
                 }
-                let _ = EVReflection.setPropertiesfromDictionary(result, anyObject: object)
+                
+                var XMLToMap: NSDictionary!
+                if let keyPath = keyPath, keyPath.isEmpty == false {
+                    XMLToMap = (result).value(forKeyPath: keyPath) as? NSDictionary ?? NSDictionary()
+                } else {
+                    XMLToMap = result
+                }
+                
+                let _ = EVReflection.setPropertiesfromDictionary(XMLToMap, anyObject: object)
                 return .success(object)
             } else {
                 if DataRequest.outputXMLresult {
