@@ -58,7 +58,7 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
         let URL: URLConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample3_xml"
         let expectation = self.expectation(description: "\(URL)")
 
-        DataRequest.outputDictionary = true
+        DataRequest.outputXMLresult = true
 
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -67,12 +67,12 @@ class AlamofireXmlToObjects3Tests: XCTestCase {
         EVReflection.setDateFormatter(dateFormatter)
 
         Alamofire.request(URL)
-            .responseObject { (response: Result<AllGames>) in
+            .responseObject { (response: DataResponse<AllGames>) in
                 expectation.fulfill()
-                if let error = response.error {
+                if let error = response.result.error {
                     XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
-                    if let result = response.value {
+                    if let result = response.result.value {
                         print("\(result.description)")
                     } else {
                         XCTAssert(false, "no result from service")

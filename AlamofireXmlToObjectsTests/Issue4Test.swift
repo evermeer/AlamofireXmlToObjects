@@ -45,11 +45,11 @@ class Issue4Test: XCTestCase {
         let expectation = self.expectation(description: "\(URL)")
 
         Alamofire.request(URL)
-            .responseObject { (response: Result<XmlResponse>) in
-                if let error = response.error {
+            .responseObject { (response: DataResponse<XmlResponse>) in
+                if let error = response.result.error {
                     XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
-                    if let result = response.value {
+                    if let result = response.result.value {
                         print("\(result.description)")
 
                     } else {

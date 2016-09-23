@@ -63,13 +63,13 @@ class AlamofireXmlToObjects2Tests: XCTestCase {
         let expectation = self.expectation(description: "\(URL)")
         
         Alamofire.request(URL)
-            .responseObject { (response: Result<JDBOR>) in
+            .responseObject { (response: DataResponse<JDBOR>) in
                 
                 expectation.fulfill()
-                if let error = response.error {
+                if let error = response.result.error {
                     XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
-                    if let result = response.value {
+                    if let result = response.result.value {
                         print("\(result.description)")
                         
                     } else {

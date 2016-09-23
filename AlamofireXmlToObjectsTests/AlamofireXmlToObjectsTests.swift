@@ -43,10 +43,10 @@ class AlamofireXmlToObjectsTests: XCTestCase {
             let expectation = self.expectation(description: "\(URL)")
                         
             Alamofire.request(URL)
-                .responseObject { (response: Result<WeatherResponse>) in
+                .responseObject { (response: DataResponse<WeatherResponse>) in
                 
                 expectation.fulfill()
-                if let result = response.value {
+                if let result = response.result.value {
                     print("\(result.description)")
                     XCTAssertNotNil(result.location, "Location should not be nil")
                     XCTAssertNotNil(result.three_day_forecast, "ThreeDayForcast should not be nil")
@@ -76,10 +76,10 @@ class AlamofireXmlToObjectsTests: XCTestCase {
             let expectation = self.expectation(description: "\(URL)")
             
             Alamofire.request(URL)
-                .responseObject { (response: Result<WeatherResponse>) in
+                .responseObject { (response: DataResponse<WeatherResponse>) in
                     
                 expectation.fulfill()
-                    if let result = response.value {
+                    if let result = response.result.value {
                         XCTAssertNotNil(result.location, "Location should not be nil")
                         XCTAssertNotNil(result.three_day_forecast, "ThreeDayForcast should not be nil")
                         
