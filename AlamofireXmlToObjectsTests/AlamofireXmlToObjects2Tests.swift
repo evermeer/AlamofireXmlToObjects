@@ -63,8 +63,10 @@ class AlamofireXmlToObjects2Tests: XCTestCase {
         let expectation = self.expectation(description: "\(URL)")
         
         Alamofire.request(URL)
-            .responseObject { (response: DataResponse<JDBOR>) in
-                
+            .responseString { (response: DataResponse<String>) in
+                print("\(response.result.value)")
+            }
+            .responseObject { (response: DataResponse<JDBOR>) in                
                 expectation.fulfill()
                 if let error = response.result.error {
                     XCTAssert(false, "ERROR: \(error.localizedDescription)")
@@ -76,8 +78,6 @@ class AlamofireXmlToObjects2Tests: XCTestCase {
                         XCTAssert(false, "no result from service")
                     }
                 }
-                
-                
         }
         
         waitForExpectations(timeout: 10) { error in

@@ -48,7 +48,7 @@ extension DataRequest {
                 
                 var XMLToMap: NSDictionary!
                 if let keyPath = keyPath, keyPath.isEmpty == false {
-                    XMLToMap = (result).value(forKeyPath: keyPath) as? NSDictionary ?? NSDictionary()
+                    XMLToMap = result.value(forKeyPath: keyPath) as? NSDictionary ?? NSDictionary()
                 } else {
                     XMLToMap = result
                 }

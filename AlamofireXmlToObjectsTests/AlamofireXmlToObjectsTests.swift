@@ -43,8 +43,10 @@ class AlamofireXmlToObjectsTests: XCTestCase {
             let expectation = self.expectation(description: "\(URL)")
                         
             Alamofire.request(URL)
-                .responseObject { (response: DataResponse<WeatherResponse>) in
-                
+            .responseString { (response: DataResponse<String>) in
+                print("\(response.result.value)")
+            }
+            .responseObject { (response: DataResponse<WeatherResponse>) in
                 expectation.fulfill()
                 if let result = response.result.value {
                     print("\(result.description)")
@@ -59,8 +61,6 @@ class AlamofireXmlToObjectsTests: XCTestCase {
                 } else {
                     XCTAssert(false, "no result from service")
                 }
-                
-                    
             }
             
             waitForExpectations(timeout: 10) { error in
