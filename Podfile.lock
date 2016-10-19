@@ -1,33 +1,32 @@
 PODS:
-  - Alamofire (4.0.0)
-  - EVReflection (2.46.0)
+  - Alamofire (4.0.1)
+  - EVReflection (3.1.2)
   - XMLDictionary (1.4)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`)
-  - EVReflection (from `https://github.com/evermeer/EVReflection.git`, branch `Swift3`)
+  - EVReflection (from `https://github.com/evermeer/EVReflection.git`)
   - XMLDictionary
 
 EXTERNAL SOURCES:
   Alamofire:
     :git: https://github.com/Alamofire/Alamofire.git
   EVReflection:
-    :branch: Swift3
     :git: https://github.com/evermeer/EVReflection.git
 
 CHECKOUT OPTIONS:
   Alamofire:
-    :commit: fc95610645577e3dd6b21196f0595a0b6bdb3698
+    :commit: b98fe26cb86c1c1227185d30b87bd57cb45fbe3c
     :git: https://github.com/Alamofire/Alamofire.git
   EVReflection:
-    :commit: e29d50f539a9c6801bd94e1991f69fd470ecd734
+    :commit: 232adc756b46b6af0eaa32eae3fa3587cf6dce06
     :git: https://github.com/evermeer/EVReflection.git
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  EVReflection: 17b377f0dd86a0f6ceccab574d0e22962a2f107e
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  EVReflection: 102d8ca777db55200f48b80d9628c8d50fb4109d
   XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
-PODFILE CHECKSUM: e039565f704f464739ec07f07c3d455c9c52d81b
+PODFILE CHECKSUM: 7d52529fe463b752155fdc75d6419008abac3e76
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.0.rc.3
