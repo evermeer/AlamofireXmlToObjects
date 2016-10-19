@@ -20,7 +20,7 @@ class Issue6Test: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        EVReflection.setBundleIdentifier(HMChannel)
+        EVReflection.setBundleIdentifier(HMChannel.self)
     }
 
     override func tearDown() {
@@ -31,15 +31,15 @@ class Issue6Test: XCTestCase {
 
     func testIssue() {
         // This is an example of a functional test case.
-        let URL: URLStringConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/Issue6_xml"
-        let expectation = expectationWithDescription("\(URL)")
+        let URL: URLConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/Issue6_xml"
+        let expectation = self.expectation(description: "\(URL)")
 
-        Alamofire.request(.GET, URL)
-            .responseObject { (response: Result<XMLResult, NSError>) in
-                if let error = response.error {
-                    XCTAssert(false, "ERROR: \(error.description)")
+        Alamofire.request(URL)
+            .responseObject { (response: DataResponse<XMLResult>) in
+                if let error = response.result.error {
+                    XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
-                    if let result = response.value {
+                    if let result = response.result.value {
                         print("\(result.description)")
 
                     } else {
@@ -49,9 +49,9 @@ class Issue6Test: XCTestCase {
                 expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { error in
             XCTAssertNil(error, "\(error)")
-        })
+        }
     }
 }
 

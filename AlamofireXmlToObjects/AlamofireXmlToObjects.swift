@@ -11,64 +11,77 @@ import EVReflection
 import XMLDictionary
 import Alamofire
 
-extension Request {
-    static var outputDictionary: Bool = false
-
-    /**
-    Adds a handler to be called once the request has finished.
-
-    - parameter completionHandler: A closure to be executed once the request has finished and the data has been mapped to a swift Object. The closure takes 2 arguments: the response object (of type Mappable) and any error produced while making the request
-
-    - returns: The request.
-    */
-    public func responseObject<T: EVObject>(completionHandler: (Result<T, NSError>) -> Void) -> Self {
-        return responseObject(nil) { (request, response, data) in
-            completionHandler(data)
-        }
+extension DataRequest {
+    static var outputXMLresult: Bool = false
+    
+    enum ErrorCode: Int {
+        case noData = 1
     }
-
-    /**
-    Adds a handler to be called once the request has finished.
-
-    - parameter completionHandler: A closure to be executed once the request has finished and the data has been mapped to a swift Object. The closure takes 5 arguments: the URL request, the URL response, the response object (of type Mappable), the raw response data, and any error produced making the request.
-
-    - returns: The request.
-    */
-    public func responseObject<T: EVObject>(completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<T, NSError>) -> Void) -> Self {
-        return responseObject(nil) { (request, response, data) in
-            completionHandler(request, response, data)
-        }
+    
+    internal static func newError(_ code: ErrorCode, failureReason: String) -> NSError {
+        let errorDomain = "com.alamofirejsontoobjects.error"
+        
+        let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
+        let returnError = NSError(domain: errorDomain, code: code.rawValue, userInfo: userInfo)
+        
+        return returnError
     }
-
-    /**
-    Adds a handler to be called once the request has finished.
-
-    - parameter queue: The queue on which the completion handler is dispatched.
-    - parameter completionHandler: A closure to be executed once the request has finished and the data has been mapped to a swift Object. The closure takes 5 arguments: the URL request, the URL response, the response object (of type Mappable), the raw response data, and any error produced making the request.
-
-    - returns: The request.
-    */
-    public func responseObject<T: EVObject>(queue: dispatch_queue_t?, completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<T, NSError>) -> Void) -> Self {
-        return responseString(completionHandler: { (response) -> Void in
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                dispatch_async(queue ?? dispatch_get_main_queue()) {
-                    switch response.result {
-                    case .Success(let xml):
-                        let t = T()
-                        if let result = NSDictionary(XMLString: xml) {
-                            if Request.outputDictionary {
-                                print("Dictionary from XML = \(result)")
-                            }
-                            EVReflection.setPropertiesfromDictionary(result, anyObject: t)
-                            completionHandler(self.request, self.response, Result.Success(t))
-                        } else {
-                            completionHandler(self.request, self.response, Result.Failure(NSError(domain: "NaN", code: 1, userInfo: nil)))
-                        }
-                    case .Failure(let error):
-                        completionHandler(self.request, self.response, Result.Failure(error ?? NSError(domain: "NaN", code: 1, userInfo: nil)))
-                    }
-                }
+    
+    internal static func EVReflectionSerializer<T: EVObject>(_ keyPath: String?, mapToObject object: T? = nil) -> DataResponseSerializer<T> {
+        return DataResponseSerializer { request, response, data, error in
+            guard error == nil else {
+                return .failure(error!)
             }
-        })
+            
+            guard let _ = data else {
+                let failureReason = "Data could not be serialized. Input data was nil."
+                let error = newError(.noData, failureReason: failureReason)
+                return .failure(error)
+            }
+            
+            let object = T()
+            let xml: String = NSString(data: data ?? Data(), encoding: String.Encoding.utf8.rawValue) as? String ?? ""
+            if let result = NSDictionary(xmlString: xml ) {
+                if DataRequest.outputXMLresult {
+                    print("Dictionary from XML = \(result)")
+                }
+                
+                var XMLToMap: NSDictionary!
+                if let keyPath = keyPath, keyPath.isEmpty == false {
+                    XMLToMap = result.value(forKeyPath: keyPath) as? NSDictionary ?? NSDictionary()
+                } else {
+                    XMLToMap = result
+                }
+                
+                let _ = EVReflection.setPropertiesfromDictionary(XMLToMap, anyObject: object)
+                return .success(object)
+            } else {
+                if DataRequest.outputXMLresult {
+                    print("XML string = \(xml)")
+                }
+                let failureReason = "Data could not be serialized. Could not get a dictionary from the XML."
+                let error = newError(.noData, failureReason: failureReason)
+                return .failure(error)
+            }
+        }
+    }
+    
+    /**
+     Adds a handler to be called once the request has finished.
+     
+     - parameter queue: The queue on which the completion handler is dispatched.
+     - parameter keyPath: The key path where EVReflection mapping should be performed
+     - parameter object: An object to perform the mapping on to
+     - parameter completionHandler: A closure to be executed once the request has finished and the data has been mapped by EVReflection.
+     
+     - returns: The request.
+     */
+    @discardableResult
+    open func responseObject<T: EVObject>(queue: DispatchQueue? = nil, keyPath: String? = nil, mapToObject object: T? = nil, completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
+        
+        let serializer = DataRequest.EVReflectionSerializer(keyPath, mapToObject: object)
+        return response(queue: queue, responseSerializer: serializer, completionHandler: completionHandler)
     }
 }
+
+

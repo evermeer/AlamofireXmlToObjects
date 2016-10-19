@@ -14,7 +14,7 @@ import EVReflection
 
 class JDBOR: EVObject {
     var __name: String?
-    var _date: NSDate?
+    var _date: Date?
     var _version: String?
     var _copyright: String?
     var DisorderList: DisorderListObject?
@@ -48,7 +48,7 @@ class AlamofireXmlToObjects2Tests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        EVReflection.setBundleIdentifier(JDBOR)
+        EVReflection.setBundleIdentifier(JDBOR.self)
     }
     
     override func tearDown() {
@@ -59,30 +59,30 @@ class AlamofireXmlToObjects2Tests: XCTestCase {
     
     func testResponseObject() {
         // This is an example of a functional test case.
-        let URL: URLStringConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sampl2_xml"
-        let expectation = expectationWithDescription("\(URL)")
+        let URL: URLConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sampl2_xml"
+        let expectation = self.expectation(description: "\(URL)")
         
-        Alamofire.request(.GET, URL)
-            .responseObject { (response: Result<JDBOR, NSError>) in
-                
+        Alamofire.request(URL)
+            .responseString { (response: DataResponse<String>) in
+                print("\(response.result.value)")
+            }
+            .responseObject { (response: DataResponse<JDBOR>) in                
                 expectation.fulfill()
-                if let error = response.error {
-                    XCTAssert(false, "ERROR: \(error.description)")
+                if let error = response.result.error {
+                    XCTAssert(false, "ERROR: \(error.localizedDescription)")
                 } else {
-                    if let result = response.value {
+                    if let result = response.result.value {
                         print("\(result.description)")
                         
                     } else {
                         XCTAssert(false, "no result from service")
                     }
                 }
-                
-                
         }
         
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { error in
             XCTAssertNil(error, "\(error)")
-        })
+        }
     }
     
 }

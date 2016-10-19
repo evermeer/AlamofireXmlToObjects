@@ -7,10 +7,14 @@
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://github.com/evermeer/AlamofireXmlToObjects/issues)
 [![Documentation](https://img.shields.io/badge/documented-100%-brightgreen.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireXmlToObjects)
 [![Stars](https://img.shields.io/github/stars/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://github.com/evermeer/AlamofireXmlToObjects/stargazers)
+<<<<<<< HEAD
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/matteocrippa/awesome-swift)
+=======
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/matteocrippa/awesome-swift#json)
+>>>>>>> Swift3
 
 [![Version](https://img.shields.io/cocoapods/v/AlamofireXmlToObjects.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireXmlToObjects)
-[![Language](https://img.shields.io/badge/language-swift2-f48041.svg?style=flat)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/language-swift3-f48041.svg?style=flat)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireXmlToObjects.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireXmlToObjects)
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20|%20OSX%2010.9+%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 [![License](https://img.shields.io/cocoapods/l/AlamofireXmlToObjects.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireXmlToObjects)
@@ -21,7 +25,11 @@
 [![Website](https://img.shields.io/badge/website-evict.nl-blue.svg?style=flat)](http://evict.nl)
 [![eMail](https://img.shields.io/badge/email-edwin@evict.nl-blue.svg?style=flat)](mailto:edwin@evict.nl?SUBJECT=About AlamofireXmlToObjects)
 
+<<<<<<< HEAD
 If you have a question and don't want to create an issue, then we can [![Join the chat at https://gitter.im/evermeer/EVReflection](https://badges.gitter.im/evermeer/EVReflection.svg)](https://gitter.im/evermeer/EVReflection?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) (EVReflection is the core of AlamofireXmlToObjects)
+=======
+If you have a question and don't want to create an issue, then we can [![Join the chat at https://gitter.im/evermeer/EVReflection](https://badges.gitter.im/evermeer/EVReflection.svg)](https://gitter.im/evermeer/EVReflection?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) (EVReflection is the base of AlamofireJsonToObjects)
+>>>>>>> Swift3
 
 With AlamofireXmlToObjects it's extremely easy to fetch a XML feed and parse it into objects. No property mapping is required. Reflection is used to put the values in the corresponding properties.
 
@@ -32,12 +40,12 @@ AlamofireXmlToObjects is based on the folowing libraries:
 
 If you have a JSON service and want the same functionality then have a look at [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects).
 
+At this moment the master branch is for Swift3. If you want to continue using Swift 2.2 (or 2.3) then switch to the Swift2.2 branch.
 Run the tests to see AlamofireXmlToObjects in action.
 
 ## Using AlamofireXmlToObjects in your own App 
 
 'AlamofireXmlToObjects' is available through the dependency manager [CocoaPods](http://cocoapods.org). 
-You do have to use cocoapods version 0.36 or later
 
 You can just add AlamofireXmlToObjects to your workspace by adding the folowing 2 lines to your Podfile:
 
@@ -46,14 +54,11 @@ use_frameworks!
 pod "AlamofireXmlToObjects"
 ```
 
-Version 0.36 of cocoapods will make a dynamic framework of all the pods that you use. Because of that it's only supported in iOS 8.0 or later. When using a framework, you also have to add an import at the top of your swift file like this:
+You also have to add an import at the top of your swift file like this:
 
 ```
 import AlamofireXmlToObjects
 ```
-
-If you want support for older versions than iOS 8.0, then you can also just copy the AlamofireXmlToObjects.swift  to your project. (Also see the instructions for embedding the EVReflection, XMLDictionary and Alamofire libraries) 
-
 
 ## Sample code
 
@@ -107,6 +112,9 @@ The code above will parse the folowing XML into the objects:
    </three_day_forecast>
 </wheather>
 ```
+
+## Advanced object mapping
+AlamofireJsonToObjects is based on [EVReflection](https://github.com/evermeer/EVReflection) and you can use all [EVReflection](https://github.com/evermeer/EVReflection) features like property mapping, converters, validators and key kleanup. See [EVReflection](https://github.com/evermeer/EVReflection) for more information.
 
 ## License
 

@@ -13,6 +13,7 @@
 		7F64D0FE1CBD7F8A00AAB0B2 /* AlamofireXmlToObjects2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */; };
 		7F7ED5151D8134BE00DB0BC2 /* Issue6Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7ED5141D8134BE00DB0BC2 /* Issue6Test.swift */; };
 		7F7ED5171D81355400DB0BC2 /* Issue6_xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F7ED5161D81355400DB0BC2 /* Issue6_xml */; };
+		7FAF28AF1DB7B60E008EB612 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF28AE1DB7B60E008EB612 /* .swift-version */; };
 		7FB7B6A51D53694000DBCAB8 /* Issue4_xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FB7B6A41D53694000DBCAB8 /* Issue4_xml */; };
 		7FB7B6A71D53696000DBCAB8 /* Issue4Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB7B6A61D53696000DBCAB8 /* Issue4Test.swift */; };
 		7FC3AEB71BC964B400221BFB /* AlamofireXmlToObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */; };
@@ -45,6 +46,7 @@
 		7F64D0FC1CBD7BF100AAB0B2 /* AlamofireXmlToObjects2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireXmlToObjects2Tests.swift; sourceTree = "<group>"; };
 		7F7ED5141D8134BE00DB0BC2 /* Issue6Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue6Test.swift; sourceTree = "<group>"; };
 		7F7ED5161D81355400DB0BC2 /* Issue6_xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Issue6_xml; sourceTree = "<group>"; };
+		7FAF28AE1DB7B60E008EB612 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		7FB7B6A41D53694000DBCAB8 /* Issue4_xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Issue4_xml; sourceTree = "<group>"; };
 		7FB7B6A61D53696000DBCAB8 /* Issue4Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue4Test.swift; sourceTree = "<group>"; };
 		7FC3AEB61BC964B400221BFB /* AlamofireXmlToObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireXmlToObjects.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		7F193CF61B36E628000C1C34 = {
 			isa = PBXGroup;
 			children = (
+				7FAF28AE1DB7B60E008EB612 /* .swift-version */,
 				7F4A36F71BDCD67100A0F73F /* .gitignore */,
 				7F4A36F81BDCD67100A0F73F /* .travis.yml */,
 				7F193D271B371199000C1C34 /* LICENSE */,
@@ -175,12 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F193D211B36E629000C1C34 /* Build configuration list for PBXNativeTarget "AlamofireXmlToObjectsTests" */;
 			buildPhases = (
-				FCBD5662B435A2C732D25BB1 /* 📦 Check Pods Manifest.lock */,
+				FCBD5662B435A2C732D25BB1 /* [CP] Check Pods Manifest.lock */,
 				7F193D101B36E629000C1C34 /* Sources */,
 				7F193D111B36E629000C1C34 /* Frameworks */,
 				7F193D121B36E629000C1C34 /* Resources */,
-				B6A2B6BACCAAF15FD080F159 /* 📦 Embed Pods Frameworks */,
-				077D940399B25FAC1E40EE34 /* 📦 Copy Pods Resources */,
+				B6A2B6BACCAAF15FD080F159 /* [CP] Embed Pods Frameworks */,
+				077D940399B25FAC1E40EE34 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,12 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F2976671BB963100074C85A /* Build configuration list for PBXNativeTarget "AlamofireXmlToObjectsTestsOSX" */;
 			buildPhases = (
-				06892A5989E1ED75F8DEFC6C /* 📦 Check Pods Manifest.lock */,
+				06892A5989E1ED75F8DEFC6C /* [CP] Check Pods Manifest.lock */,
 				7F29765C1BB963100074C85A /* Sources */,
 				7F29765D1BB963100074C85A /* Frameworks */,
 				7F29765E1BB963100074C85A /* Resources */,
-				B1230FBBDC3CE8F697B397B1 /* 📦 Embed Pods Frameworks */,
-				81F7A5B12C1E1D5833ED3551 /* 📦 Copy Pods Resources */,
+				B1230FBBDC3CE8F697B397B1 /* [CP] Embed Pods Frameworks */,
+				81F7A5B12C1E1D5833ED3551 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +226,7 @@
 				TargetAttributes = {
 					7F193D131B36E629000C1C34 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					7F29765F1BB963100074C85A = {
 						CreatedOnToolsVersion = 7.0;
@@ -257,6 +261,7 @@
 				7F7ED5171D81355400DB0BC2 /* Issue6_xml in Resources */,
 				7FC3AECB1BC964BF00221BFB /* sample_xml in Resources */,
 				7F41B6341D041A68009D083B /* sample3_xml in Resources */,
+				7FAF28AF1DB7B60E008EB612 /* .swift-version in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,29 +276,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06892A5989E1ED75F8DEFC6C /* 📦 Check Pods Manifest.lock */ = {
+		06892A5989E1ED75F8DEFC6C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		077D940399B25FAC1E40EE34 /* 📦 Copy Pods Resources */ = {
+		077D940399B25FAC1E40EE34 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +306,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireXmlToObjectsTests/Pods-AlamofireXmlToObjectsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81F7A5B12C1E1D5833ED3551 /* 📦 Copy Pods Resources */ = {
+		81F7A5B12C1E1D5833ED3551 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,14 +321,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireXmlToObjectsTestsOSX/Pods-AlamofireXmlToObjectsTestsOSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1230FBBDC3CE8F697B397B1 /* 📦 Embed Pods Frameworks */ = {
+		B1230FBBDC3CE8F697B397B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,14 +336,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireXmlToObjectsTestsOSX/Pods-AlamofireXmlToObjectsTestsOSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6A2B6BACCAAF15FD080F159 /* 📦 Embed Pods Frameworks */ = {
+		B6A2B6BACCAAF15FD080F159 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,19 +351,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireXmlToObjectsTests/Pods-AlamofireXmlToObjectsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCBD5662B435A2C732D25BB1 /* 📦 Check Pods Manifest.lock */ = {
+		FCBD5662B435A2C732D25BB1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -427,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -466,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,6 +490,7 @@
 				PRODUCT_NAME = AlamofireXmlToObjectsTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireXmlToObjectsTests/AlamofireXmlToObjectsTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -498,6 +504,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AlamofireXmlToObjectsTests;
 				SWIFT_OBJC_BRIDGING_HEADER = "AlamofireXmlToObjectsTests/AlamofireXmlToObjectsTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

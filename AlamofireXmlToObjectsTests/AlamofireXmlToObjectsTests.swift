@@ -28,7 +28,7 @@ class AlamofireXmlToObjectsTests: XCTestCase {
         override func setUp() {
             super.setUp()
             // Put setup code here. This method is called before the invocation of each test method in the class.
-            EVReflection.setBundleIdentifier(Forecast)
+            EVReflection.setBundleIdentifier(Forecast.self)
         }
         
         override func tearDown() {
@@ -39,14 +39,16 @@ class AlamofireXmlToObjectsTests: XCTestCase {
     
         func testResponseObject() {
             // This is an example of a functional test case.
-            let URL: URLStringConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample_xml"
-            let expectation = expectationWithDescription("\(URL)")
+            let URL: URLConvertible = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample_xml"
+            let expectation = self.expectation(description: "\(URL)")
                         
-            Alamofire.request(.GET, URL)
-                .responseObject { (response: Result<WeatherResponse, NSError>) in
-                
+            Alamofire.request(URL)
+            .responseString { (response: DataResponse<String>) in
+                print("\(response.result.value)")
+            }
+            .responseObject { (response: DataResponse<WeatherResponse>) in
                 expectation.fulfill()
-                if let result = response.value {
+                if let result = response.result.value {
                     print("\(result.description)")
                     XCTAssertNotNil(result.location, "Location should not be nil")
                     XCTAssertNotNil(result.three_day_forecast, "ThreeDayForcast should not be nil")
@@ -59,27 +61,25 @@ class AlamofireXmlToObjectsTests: XCTestCase {
                 } else {
                     XCTAssert(false, "no result from service")
                 }
-                
-                    
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
+            waitForExpectations(timeout: 10) { error in
                 XCTAssertNil(error, "\(error)")
-            })
-        }
+            }
+    }
     
     
         func testResponseObject2() {
             // This is an example of a functional test case.
             
             let URL = "http://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample_xml"
-            let expectation = expectationWithDescription("\(URL)")
+            let expectation = self.expectation(description: "\(URL)")
             
-            Alamofire.request(.GET, URL)
-                .responseObject { (request: NSURLRequest?, HTTPURLResponse: NSHTTPURLResponse?, response: Result<WeatherResponse, NSError>) in
+            Alamofire.request(URL)
+                .responseObject { (response: DataResponse<WeatherResponse>) in
                     
                 expectation.fulfill()
-                    if let result = response.value {
+                    if let result = response.result.value {
                         XCTAssertNotNil(result.location, "Location should not be nil")
                         XCTAssertNotNil(result.three_day_forecast, "ThreeDayForcast should not be nil")
                         
@@ -93,9 +93,9 @@ class AlamofireXmlToObjectsTests: XCTestCase {
                     }
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
+            waitForExpectations(timeout: 10) { error in
                 XCTAssertNil(error, "\(error)")
-            })
-        }        
+            }
+        }
     }
 
