@@ -69,8 +69,8 @@ class Forecast: EVObject {
 class AlamofireXmlToObjectsTests {
     func testResponseObject() {
         let URL = "https://raw.githubusercontent.com/evermeer/AlamofireXmlToObjects/master/AlamofireXmlToObjectsTests/sample_xml"
-        Alamofire.request(.GET, URL, parameters: nil)
-        .responseObject { (response: Result< WeatherResponse, NSError>) in
+        Alamofire.request(URL)
+        .responseObject { (response: DataResponse<WeatherResponse>) in
             if let result = response.value {
                // That was all... You now have a WeatherResponse object with data
             }

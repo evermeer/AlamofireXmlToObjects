@@ -35,6 +35,7 @@ s.license      = { :type => "MIT", :file => "LICENSE" }
 #
 
 s.author    = "evermeer"
+s.authors   = { 'Edwin Vermeer' => 'edwin@evict.nl' }
 s.social_media_url   = "http://twitter.com/evermeer"
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
