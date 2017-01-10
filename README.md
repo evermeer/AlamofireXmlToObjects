@@ -1,9 +1,20 @@
 # AlamofireXmlToObjects
 
+🚨  This is now a subspec of **[EVReflection](https://github.com/evermeer/EVReflection/tree/master/Source/Alamofire/XML)** and the code is maintained there. 🚨
+
+You can install it as a subspec like this:
+
+```
+use_frameworks!
+pod "EVReflection/AlamofireXML"
+```
+
+Besideds this subspec there are also subspecs for: XML, AlamofireXML, Moya, MoyaRxSwift and MoyaReflectiveSwift
+
 <!---
  [![Circle CI](https://img.shields.io/circleci/project/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://circleci.com/gh/evermeer/AlamofireXmlToObjects)
- -->
 [![Build Status](https://travis-ci.org/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://travis-ci.org/evermeer/AlamofireXmlToObjects)
+-->
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://github.com/evermeer/AlamofireXmlToObjects/issues)
 [![Documentation](https://img.shields.io/badge/documented-100%-brightgreen.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireXmlToObjects)
 [![Stars](https://img.shields.io/github/stars/evermeer/AlamofireXmlToObjects.svg?style=flat)](https://github.com/evermeer/AlamofireXmlToObjects/stargazers)
